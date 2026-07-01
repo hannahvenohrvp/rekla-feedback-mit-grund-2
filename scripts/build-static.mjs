@@ -34,6 +34,7 @@ const altEmail = render(join(root, "templates", "neue-anfrage-alt.html"), data);
 const neuEmail = render(join(root, "templates", "neue-anfrage.html"), data);
 
 write("lp/feedback.html", render(join(root, "pages", "feedback-lp.html"), lpContext));
+write("lp/feedback-reklamation.html", render(join(root, "pages", "feedback-reklamation-lp.html"), lpContext));
 write("lp/reklamation.html", render(join(root, "pages", "reklamation-lp.html"), lpContext));
 write("email/alt.html", altEmail);
 write("email/neu.html", neuEmail);

@@ -16,6 +16,7 @@ const dataPath = join(root, "data", "sample.json");
 const lpPaths = {
   reklamation: join(root, "pages", "reklamation-lp.html"),
   feedback: join(root, "pages", "feedback-lp.html"),
+  "feedback-reklamation": join(root, "pages", "feedback-reklamation-lp.html"),
 };
 
 Handlebars.registerHelper("equals", function (a, b, options) {
@@ -44,6 +45,7 @@ function loadPreviews() {
     alt: renderTemplate(templatePaths.alt),
     reklamation: renderLandingPage("reklamation"),
     feedback: renderLandingPage("feedback"),
+    "feedback-reklamation": renderLandingPage("feedback-reklamation"),
   };
 }
 
@@ -167,6 +169,12 @@ const server = createServer((req, res) => {
   if (path === "/lp/feedback") {
     res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
     res.end(previews.feedback);
+    return;
+  }
+
+  if (path === "/lp/feedback-reklamation") {
+    res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
+    res.end(previews["feedback-reklamation"]);
     return;
   }
 
