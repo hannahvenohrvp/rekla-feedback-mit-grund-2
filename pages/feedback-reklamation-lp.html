@@ -12,8 +12,13 @@
       color: #48453b;
       background: #fff;
     }
+    button, input, textarea, select {
+      font-family: inherit;
+    }
     .header {
       background: #fff;
+      position: relative;
+      z-index: 1200;
     }
     .green-bar {
       height: 14px;
@@ -51,7 +56,7 @@
       justify-content: center;
       gap: 6px;
       margin: 0;
-      font-size: 19px;
+      font-size: 18px;
       line-height: 1.15;
       font-weight: bold;
       color: #48453b;
@@ -76,116 +81,14 @@
       display: block;
       border: 0;
     }
-    .trust-text {
-      height: 20px;
-    }
-    .trust-stars {
-      height: 20px;
-    }
-    .trust-reviews {
-      height: 14px;
-    }
-    .trust-logo {
-      height: 16px;
-    }
+    .trust-text { height: 20px; }
+    .trust-stars { height: 20px; }
+    .trust-reviews { height: 14px; }
+    .trust-logo { height: 16px; }
     .header-tuev img {
       display: block;
       height: 42px;
       width: auto;
-    }
-    .feedback-box {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 32px 24px 16px;
-    }
-    .feedback-box-inner {
-      background-color: #f2f4f7;
-      border-left: 6px solid #98c44c;
-      padding: 22px 24px 20px;
-    }
-    .feedback-box h2 {
-      margin: 0 0 12px;
-      font-size: 20px;
-      line-height: 1.35;
-      font-weight: bold;
-      color: #98c44c;
-    }
-    .feedback-box p {
-      margin: 0 0 14px;
-      font-size: 14px;
-      line-height: 1.55;
-      color: #48453b;
-    }
-    .feedback-box h3 {
-      margin: 4px 0 10px;
-      font-size: 16px;
-      line-height: 1.4;
-      font-weight: bold;
-      color: #48453b;
-    }
-    .feedback-box ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      font-size: 14px;
-      line-height: 1.55;
-      color: #48453b;
-    }
-    .feedback-box li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      margin-bottom: 10px;
-    }
-    .feedback-box li:last-child {
-      margin-bottom: 0;
-    }
-    .feedback-box li img {
-      width: 22px;
-      height: 19px;
-      margin-top: 2px;
-      flex-shrink: 0;
-    }
-    .hero {
-      display: none;
-    }
-    .demo-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 999;
-      background: rgba(0, 0, 0, 0.35);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.4s ease;
-    }
-    .demo-overlay.is-visible {
-      opacity: 1;
-    }
-    .demo-banner {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(0.95);
-      z-index: 1000;
-      min-width: 320px;
-      max-width: 520px;
-      width: 90%;
-      padding: 36px 40px;
-      background: #4c8ba5;
-      color: #fff;
-      font-size: 24px;
-      line-height: 1.35;
-      font-weight: bold;
-      text-align: center;
-      border-radius: 8px;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.4s ease, transform 0.4s ease;
-    }
-    .demo-banner.is-visible {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
     }
     @media (max-width: 900px) {
       .header-inner {
@@ -197,232 +100,230 @@
         flex: 1 1 100%;
       }
     }
-    .content {
-      max-width: 1100px;
+
+    .rk-wrap {
+      max-width: 1040px;
       margin: 0 auto;
-      padding: 28px 24px 48px;
+      padding: 26px 24px 48px;
     }
-    .content-main {
+    .rk-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 14px;
+      font-size: 13px;
+      font-weight: bold;
+      color: #7fa62f;
+      text-decoration: none;
+    }
+    .rk-back:hover { color: #6b8f28; }
+    .rk-back .arr { font-size: 15px; line-height: 1; }
+    .rk-title {
+      margin: 0;
+      font-size: 26px;
+      font-weight: bold;
+      color: #7fa62f;
+    }
+    .rk-sub {
+      margin: 4px 0 26px;
+      font-size: 18px;
+      color: #8b8b83;
+    }
+    .rk-cols {
       display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 32px;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
       align-items: start;
-      margin-top: 12px;
+      margin-bottom: 26px;
     }
-    h1 {
-      margin: 0 0 12px;
-      font-size: 34px;
-      font-weight: normal;
+    .rk-card {
+      background: #f8fafc;
+      border: 1px solid #e6e9ee;
+      border-radius: 12px;
+      box-shadow: none;
+      padding: 26px 30px 28px;
     }
-    .request-id {
-      font-size: 28px;
-      margin-bottom: 36px;
+    .rk-warning {
+      border-left: 5px solid #c0392b;
     }
-    .intro, .phone {
-      font-size: 15px;
-      line-height: 1.6;
-      margin-bottom: 16px;
-    }
-    .warning-box {
-      background-color: #f2f4f7;
-      border-left: 6px solid #c0392b;
-      padding: 22px 24px 20px;
-      margin-bottom: 16px;
-    }
-    .warning-box h2 {
-      margin: 0 0 12px;
-      font-size: 20px;
+    .rk-warning h2 {
+      margin: 0 0 14px;
+      font-size: 18px;
       line-height: 1.35;
       font-weight: bold;
-      color: #c0392b;
+      color: #48453b;
     }
-    .warning-box p {
+    .rk-warning p {
       margin: 0 0 14px;
       font-size: 14px;
       line-height: 1.55;
       color: #48453b;
     }
-    .warning-box p:last-child {
-      margin-bottom: 0;
-    }
-    .phone-question {
-      font-size: 15px;
-      line-height: 1.6;
-      margin: 0 0 4px;
-    }
-    .phone a { color: #4c8ba5; text-decoration: none; font-weight: bold; }
-    .webinar {
-      margin-top: 28px;
-      background: #fff;
-      border: 1px solid #d1d9e0;
-      border-radius: 8px;
-      padding: 24px 24px 20px;
-    }
-    .webinar-title {
-      margin: 0 0 18px;
-      font-size: 20px;
-      line-height: 1.35;
-      font-weight: normal;
-      color: #98c44c;
-    }
-    .webinar-body {
-      display: grid;
-      grid-template-columns: 118px 1fr;
-      gap: 18px;
-      align-items: start;
-      margin-bottom: 20px;
-    }
-    .webinar-photo {
-      width: 100%;
-      height: 88px;
-      display: block;
-      object-fit: cover;
-      object-position: center top;
-      border-radius: 2px;
-    }
-    .webinar-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    .webinar-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      margin-bottom: 10px;
+    .rk-warning p:last-child { margin-bottom: 0; }
+    .rk-phone {
+      margin: 20px 4px 0;
       font-size: 14px;
-      line-height: 1.45;
+      line-height: 1.6;
       color: #48453b;
     }
-    .webinar-list li:last-child {
-      margin-bottom: 0;
-    }
-    .webinar-list img {
-      width: 22px;
-      height: 19px;
-      margin-top: 2px;
-      flex-shrink: 0;
-    }
-    .webinar-btn {
-      display: block;
-      width: 100%;
-      background: #4c8ba5;
-      color: #fff;
-      text-align: center;
+    .rk-phone a {
+      color: #4c8ba5;
       text-decoration: none;
-      padding: 12px 16px;
-      font-size: 15px;
       font-weight: bold;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
     }
-    .webinar-date {
-      margin: 12px 0 0;
-      text-align: center;
-      font-size: 13px;
-      color: #48453b;
-    }
-    .form-box {
-      border: 2px solid #b8d0dc;
-      border-radius: 4px;
-      padding: 20px 22px 22px;
-      background: #fff;
-      height: auto;
-      align-self: start;
-    }
-    .form-box h2 {
-      margin: 0 0 16px;
-      font-size: 20px;
+    .rk-form h2 {
+      margin: 0 0 18px;
+      font-size: 18px;
       line-height: 1.3;
       font-weight: bold;
-      color: #4c8ba5;
+      color: #48453b;
     }
-    .option {
-      display: block;
-      margin-bottom: 10px;
+    .rk-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      margin-bottom: 14px;
       font-size: 14px;
       line-height: 1.4;
       color: #48453b;
     }
-    textarea {
+    .rk-option input {
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .rk-form textarea {
       width: 100%;
-      min-height: 90px;
-      margin: 14px 0 16px;
-      padding: 10px 12px;
-      border: 1px solid #c8c7c4;
+      min-height: 96px;
+      margin: 8px 0 18px;
+      padding: 12px 14px;
+      border: 1px solid #c8ccd2;
+      border-radius: 6px;
       font-family: inherit;
       font-size: 14px;
+      color: #48453b;
       resize: vertical;
     }
-    .submit {
-      width: 100%;
-      padding: 12px 14px;
-      font-size: 15px;
-      font-weight: bold;
-      background: #4c8ba5;
-      color: #fff;
-      border: none;
-      border-radius: 2px;
+    .rk-option input[type="radio"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      margin-top: 1px;
+      border: 1px solid #b9bdc4;
+      border-radius: 50%;
+      background: #fff;
+      position: relative;
+      flex-shrink: 0;
       cursor: pointer;
     }
-    .details {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px 48px;
+    .rk-option input[type="radio"]:checked {
+      border-color: #4c8ba5;
     }
-    .details h2 {
-      margin: 0 0 24px;
-      font-size: 28px;
-      font-weight: normal;
-      color: #98c44c;
+    .rk-option input[type="radio"]:checked::after {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #4c8ba5;
     }
-    .details-grid {
+    .rk-option input[type="radio"].field-error {
+      border: 2px solid #c0392b;
+    }
+    .rk-form textarea.field-error {
+      border-color: #c0392b;
+    }
+    .reason-options,
+    .textarea-wrap {
+      position: relative;
+    }
+    .field-hint {
+      position: absolute;
+      z-index: 30;
+      top: 0;
+      right: calc(100% + 14px);
+      width: 210px;
+      padding: 9px 12px;
+      background: #fff;
+      border: 1px solid #b9bdc4;
+      border-radius: 6px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
+      font-size: 13px;
+      line-height: 1.35;
+      color: #48453b;
+    }
+    .field-hint::after {
+      content: "";
+      position: absolute;
+      top: 13px;
+      right: -6px;
+      width: 11px;
+      height: 11px;
+      background: #fff;
+      border-top: 1px solid #b9bdc4;
+      border-right: 1px solid #b9bdc4;
+      transform: rotate(45deg);
+    }
+    .field-hint[hidden] {
+      display: none;
+    }
+    @media (max-width: 900px) {
+      .field-hint {
+        position: static;
+        width: auto;
+        margin-bottom: 10px;
+      }
+      .field-hint::after { display: none; }
+    }
+    .rk-submit {
+      width: 100%;
+      padding: 14px 16px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #fff;
+      background: #4c8ba5;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .rk-submit:hover { background: #417a91; }
+
+    .rk-details h2 {
+      margin: 0 0 22px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #7fa62f;
+    }
+    .rk-details-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 40px;
     }
-    .details-block h3 {
+    .rk-block h3 {
       margin: 0 0 16px;
-      font-size: 18px;
+      font-size: 15px;
       font-weight: bold;
       color: #48453b;
     }
-    .detail-row {
+    .rk-block dl { margin: 0; }
+    .rk-row {
       display: grid;
-      grid-template-columns: 170px 1fr;
+      grid-template-columns: 165px 1fr;
       gap: 12px;
-      padding: 4px 0;
+      padding: 5px 0;
       font-size: 14px;
       line-height: 1.5;
     }
-    .detail-row dt {
+    .rk-row dt {
       margin: 0;
       font-weight: bold;
+      color: #48453b;
     }
-    .detail-row dd {
+    .rk-row dd {
       margin: 0;
-    }
-    .senior-block {
-      margin-top: 24px;
-      padding-top: 20px;
-      border-top: 1px solid #d1d5db;
-    }
-    .senior-block:first-of-type {
-      margin-top: 0;
-      padding-top: 0;
-      border-top: none;
-    }
-    .senior-block h4 {
-      margin: 0 0 12px;
-      font-size: 15px;
-      font-weight: bold;
-    }
-    @media (max-width: 900px) {
-      .content-main { grid-template-columns: 1fr; }
-      .webinar-body { grid-template-columns: 1fr; }
-      .details-grid { grid-template-columns: 1fr; }
-      .detail-row { grid-template-columns: 1fr; gap: 2px; }
+      color: #7fa62f;
     }
     .variant-toggle {
       display: inline-flex;
@@ -435,9 +336,7 @@
       opacity: 0.6;
       transition: opacity 0.2s ease;
     }
-    .variant-toggle:hover {
-      opacity: 1;
-    }
+    .variant-toggle:hover { opacity: 1; }
     .variant-toggle-thumb {
       position: relative;
       display: inline-block;
@@ -458,39 +357,37 @@
       background: #fff;
       transition: transform 0.2s ease;
     }
-    .variant-toggle[aria-checked="true"] {
-      opacity: 1;
-    }
-    .variant-toggle[aria-checked="true"] .variant-toggle-thumb {
-      background: #98c44c;
-    }
-    .variant-toggle[aria-checked="true"] .variant-toggle-thumb::after {
-      transform: translateX(14px);
-    }
+    .variant-toggle[aria-checked="true"] { opacity: 1; }
+    .variant-toggle[aria-checked="true"] .variant-toggle-thumb { background: #98c44c; }
+    .variant-toggle[aria-checked="true"] .variant-toggle-thumb::after { transform: translateX(14px); }
     .variant-badge {
       font-size: 9px;
       font-weight: bold;
       letter-spacing: 0.5px;
+      color: #4c8ba5;
+    }
+    body.bg-grey {
+      background: #eef1f5;
+    }
+    body.bg-grey .rk-card {
+      background: #fff;
+      border: 1px solid #e3e7ec;
+      box-shadow: 0 8px 26px rgba(0, 0, 0, 0.06);
+    }
+    body.bg-grey .rk-warning {
+      border-left: 5px solid #c0392b;
+    }
+    .variant-badge.neu {
       color: #c0392b;
     }
-    .variant-hidden {
+    #expired-popup[hidden] {
       display: none;
-    }
-    .rekla-greybox {
-      background: #eceef1;
-      border: 1px solid #dcdfe3;
-      border-radius: 8px;
-      padding: 24px 28px 28px;
     }
     .rekla-popup-overlay {
       position: fixed;
       inset: 0;
       z-index: 1100;
       background: rgba(0, 0, 0, 0.4);
-    }
-    .rekla-above-overlay {
-      position: relative;
-      z-index: 1102;
     }
     .rekla-popup {
       position: fixed;
@@ -510,23 +407,24 @@
       margin: 0 0 14px;
       font-size: 22px;
       line-height: 1.3;
-      color: #c0392b;
+      color: #48453b;
     }
     .rekla-popup p {
-      margin: 0 0 22px;
+      margin: 0 0 16px;
       font-size: 15px;
       line-height: 1.6;
       color: #48453b;
     }
-    .rekla-popup-close {
-      padding: 11px 28px;
-      font-size: 15px;
-      font-weight: bold;
-      background: #4c8ba5;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
+    .rekla-popup p:last-child { margin-bottom: 0; }
+    .rekla-popup a { color: #4c8ba5; }
+    @media (max-width: 860px) {
+      .rk-cols { grid-template-columns: 1fr; }
+      .rk-details-grid { grid-template-columns: 1fr; gap: 28px; }
+    }
+    @media (max-width: 600px) {
+      .rk-wrap { padding: 22px 16px 32px; }
+      .rk-card { padding: 22px 22px 24px; }
+      .rk-row { grid-template-columns: 1fr; gap: 2px; }
     }
   </style>
 </head>
@@ -560,113 +458,221 @@
       <div class="header-tuev">
         <img src="https://static.pflegehilfe.org/newsletter/tuev-siegel-124-65.png" alt="TÜV-zertifiziert"/>
       </div>
+
+      <button id="scheme-toggle" class="variant-toggle" type="button" role="switch" aria-checked="false" title="Variante: grauer Hintergrund" aria-label="Variante: grauer Hintergrund">
+        <span class="variant-toggle-thumb"></span>
+        <span class="variant-badge">HG</span>
+      </button>
+
+      <button id="expired-toggle" class="variant-toggle" type="button" role="switch" aria-checked="false" title="7-Tage-Frist abgelaufen (Popup)" aria-label="7-Tage-Frist abgelaufen (Popup)">
+        <span class="variant-toggle-thumb"></span>
+        <span class="variant-badge neu">NEU</span>
+      </button>
     </div>
   </header>
 
+  <div id="expired-popup" hidden>
+    <div class="rekla-popup-overlay"></div>
+    <div class="rekla-popup" role="dialog" aria-labelledby="expired-title">
+      <h2 id="expired-title">Feedback &amp; Reklamation nicht mehr möglich</h2>
+      <p>Die 7-tägige Frist für Feedback und Reklamationen ist leider bereits abgelaufen, sodass wir Ihr Anliegen nicht mehr entgegennehmen können. Wir bitten um Ihr Verständnis.</p>
+      <p>Bei Fragen oder zur Anpassung Ihrer Buchungseinstellungen wenden Sie sich gerne an Ihren Partnerbetreuer oder an <a href="mailto:partnerbetreuer@pflegehilfe.de">partnerbetreuer@pflegehilfe.de</a>.</p>
+    </div>
+  </div>
+
   <div class="green-bar"></div>
 
-  <div class="hero"></div>
+  <div class="rk-wrap">
+    <a class="rk-back" href="/lp/feedback?from=email"><span class="arr">&larr;</span> Zurück zur Rückmeldung</a>
+    <h1 class="rk-title">Anfrage reklamieren</h1>
+    <p class="rk-sub">Anfrage {{requestNumber}}</p>
 
-  <div class="content">
-    <h1>Anfrage reklamieren</h1>
-    <div class="request-id">Anfrage {{requestNumber}}</div>
-
-    <div class="content-main">
-      <div class="content-left">
-        <div class="warning-box">
+    <div class="rk-cols">
+      <div class="rk-left">
+        <div class="rk-card rk-warning">
           <h2>Lead-Volumen gefährdet</h2>
           <p>Wir verstehen, dass <b>nicht jeder Kontakt perfekt zu Ihrem Angebot passt</b> und Reklamationen Teil eines <b>transparenten Vermittlungsprozesses</b> sind.</p>
           <p>Gleichzeitig möchten wir darauf hinweisen, dass eine <b>überdurchschnittlich hohe Reklamationsquote</b> Einfluss auf Ihr <b>zukünftiges Lead-Volumen</b> hat.</p>
         </div>
-        <p class="phone">
-          Sie wollen Ihre Buchung optimieren & zukünftige Reklamationen vermeiden? Ihr persönlicher Partnerbetreuer hilft Ihnen gerne weiter:<br/>
+        <p class="rk-phone">
+          Sie wollen Ihre Buchung optimieren &amp; zukünftige Reklamationen vermeiden? Ihr persönlicher Partnerbetreuer hilft Ihnen gerne weiter:<br/>
           <a href="tel:004961312652011">06131/26 52 011</a>
         </p>
-
-        <div class="webinar">
-          <h2 class="webinar-title">Webinar: Qualität ist kein Zufall –<br/>Unsere Maßnahmen für Top Leads</h2>
-          <div class="webinar-body">
-            <img class="webinar-photo" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=240&q=80" alt="Rene Renkel"/>
-            <ul class="webinar-list">
-              <li>
-                <img src="https://static.pflegehilfe.org/newsletter/icons/icon-haken-22-19-1.png" alt=""/>
-                Wie entstehen unsere <b>hochwertigen Leads</b>
-              </li>
-              <li>
-                <img src="https://static.pflegehilfe.org/newsletter/icons/icon-haken-22-19-1.png" alt=""/>
-                Was tun wir für die <b>Qualitätssicherung</b>
-              </li>
-              <li>
-                <img src="https://static.pflegehilfe.org/newsletter/icons/icon-haken-22-19-1.png" alt=""/>
-                Einblicke in das <b>Reklamationsmanagement</b>
-              </li>
-            </ul>
-          </div>
-          <a class="webinar-btn" href="#">Jetzt kostenlos anmelden</a>
-          <p class="webinar-date">Nächster Termin: 18.06.2026</p>
-        </div>
       </div>
 
-      <aside class="form-box">
-      <h2>Bitte wählen Sie den Reklamationsgrund</h2>
-      <label class="option"><input type="radio" name="reason"/> Kontakt bereits bekannt</label>
-      <label class="option"><input type="radio" name="reason"/> Kein Kontakt möglich</label>
-      <label class="option"><input type="radio" name="reason"/> Budget/Finanzierung falsch</label>
-      <label class="option"><input type="radio" name="reason"/> Zielgebiet falsch</label>
-      <label class="option"><input type="radio" name="reason"/> Produktklassifizierung falsch</label>
-      <label class="option"><input type="radio" name="reason"/> Keine Beachtung der hinterlegten Kriterien (bitte in Textfeld erläutern)</label>
-      <textarea placeholder="Hier haben Sie die Möglichkeit Ihren Reklamationsgrund weiter auszuführen."></textarea>
-      <button class="submit" type="button">Anfrage reklamieren</button>
-      </aside>
+      <div class="rk-card rk-form">
+        <h2>Bitte wählen Sie den Reklamationsgrund</h2>
+        <form id="rekla-form" novalidate>
+          <div class="reason-options">
+            <div class="field-hint hint-reason" role="alert" hidden>Wählen Sie bitte hier den Grund Ihrer Reklamation aus.</div>
+            <label class="rk-option"><input type="radio" name="reason" required/> Kontakt bereits bekannt</label>
+            <label class="rk-option"><input type="radio" name="reason" required/> Kein Kontakt möglich</label>
+            <label class="rk-option"><input type="radio" name="reason" required/> Budget/Finanzierung falsch</label>
+            <label class="rk-option"><input type="radio" name="reason" required/> Zielgebiet falsch</label>
+            <label class="rk-option"><input type="radio" name="reason" required/> Produktklassifizierung falsch</label>
+            <label class="rk-option"><input type="radio" name="reason" required/> Keine Beachtung der hinterlegten Kriterien (bitte in Textfeld erläutern)</label>
+          </div>
+          <div class="textarea-wrap">
+            <div class="field-hint hint-text" role="alert" hidden>Tragen Sie bitte hier die Gründe Ihrer Reklamation ein.</div>
+            <textarea required placeholder="Hier haben Sie die Möglichkeit Ihren Reklamationsgrund weiter auszuführen."></textarea>
+          </div>
+          <button class="rk-submit" type="submit">Anfrage reklamieren</button>
+        </form>
+      </div>
     </div>
-  </div>
 
-  <section class="details">
-    <h2>Details der Anfrage {{requestNumber}}</h2>
-    <div class="details-grid">
-      <div>
-        <div class="details-block">
+    <div class="rk-card rk-details">
+      <h2>Details der Anfrage {{requestNumber}}</h2>
+      <div class="rk-details-grid">
+        <div class="rk-block">
           <h3>Kontaktinformationen des Interessenten</h3>
           <dl>
-            <div class="detail-row"><dt>Anrede:</dt><dd>{{inquiryDetails.contact.salutation}}</dd></div>
-            <div class="detail-row"><dt>Vorname:</dt><dd>{{inquiryDetails.contact.firstName}}</dd></div>
-            <div class="detail-row"><dt>Nachname:</dt><dd>{{inquiryDetails.contact.lastName}}</dd></div>
-            <div class="detail-row"><dt>Email:</dt><dd>{{inquiryDetails.contact.email}}</dd></div>
-            <div class="detail-row"><dt>Mobil:</dt><dd>{{inquiryDetails.contact.mobile}}</dd></div>
-            <div class="detail-row"><dt>Erreichbarkeit:</dt><dd>{{inquiryDetails.contact.availability}}</dd></div>
+            <div class="rk-row"><dt>Anrede:</dt><dd>{{inquiryDetails.contact.salutation}}</dd></div>
+            <div class="rk-row"><dt>Vorname:</dt><dd>{{inquiryDetails.contact.firstName}}</dd></div>
+            <div class="rk-row"><dt>Nachname:</dt><dd>{{inquiryDetails.contact.lastName}}</dd></div>
+            <div class="rk-row"><dt>Email:</dt><dd>{{inquiryDetails.contact.email}}</dd></div>
+            <div class="rk-row"><dt>Mobil:</dt><dd>{{inquiryDetails.contact.mobile}}</dd></div>
+            <div class="rk-row"><dt>Erreichbarkeit:</dt><dd>{{inquiryDetails.contact.availability}}</dd></div>
           </dl>
         </div>
 
-        <div class="details-block" style="margin-top:32px;">
-          <h3>Informationen zu den Senioren</h3>
-          {{#each inquiryDetails.seniors}}
-          <div class="senior-block">
-            <h4>Senior: {{title}}</h4>
-            <dl>
-              <div class="detail-row"><dt>Anrede:</dt><dd>{{salutation}}</dd></div>
-              <div class="detail-row"><dt>Beziehung:</dt><dd>{{relationship}}</dd></div>
-              <div class="detail-row"><dt>Lebenssituation:</dt><dd>{{livingSituation}}</dd></div>
-              <div class="detail-row"><dt>Pflegegrad:</dt><dd>{{careLevel}}</dd></div>
-              <div class="detail-row"><dt>Mobilität:</dt><dd>{{mobility}}</dd></div>
-              <div class="detail-row"><dt>Medizinischer Hintergrund:</dt><dd>{{medicalBackground}}</dd></div>
-            </dl>
-          </div>
-          {{/each}}
+        <div class="rk-block">
+          <h3>Anfragendetails - {{inquiryDetails.request.productName}}</h3>
+          <dl>
+            {{#each inquiryDetails.request.fields}}
+            <div class="rk-row"><dt>{{label}}:</dt><dd>{{value}}</dd></div>
+            {{/each}}
+            <div class="rk-row"><dt>Beratungsgespräch durchgeführt:</dt><dd>{{inquiryDetails.request.consultant}}</dd></div>
+            <div class="rk-row"><dt>Anfrage eingegangen:</dt><dd>{{inquiryDetails.request.receivedAt}}</dd></div>
+          </dl>
         </div>
       </div>
-
-      <div class="details-block">
-        <h3>Anfragendetails - {{inquiryDetails.request.productName}}</h3>
-        <dl>
-          {{#each inquiryDetails.request.fields}}
-          <div class="detail-row"><dt>{{label}}:</dt><dd>{{value}}</dd></div>
-          {{/each}}
-          <div class="detail-row"><dt>Beratungsgespräch durchgeführt:</dt><dd>{{inquiryDetails.request.consultant}}</dd></div>
-          <div class="detail-row"><dt>Anfrage eingegangen:</dt><dd>{{inquiryDetails.request.receivedAt}}</dd></div>
-          <div class="detail-row"><dt>Beratungsgespräch durchgeführt:</dt><dd>{{inquiryDetails.request.consultedAt}}</dd></div>
-        </dl>
-      </div>
     </div>
-  </section>
+  </div>
+
+  <script>
+    (function () {
+      var toggle = document.getElementById("scheme-toggle");
+      if (!toggle) return;
+
+      function apply(on) {
+        toggle.setAttribute("aria-checked", on ? "true" : "false");
+        document.body.classList.toggle("bg-grey", on);
+      }
+
+      try { apply(localStorage.getItem("fbGreyBg") === "1"); } catch (e) {}
+
+      toggle.addEventListener("click", function () {
+        var on = toggle.getAttribute("aria-checked") !== "true";
+        apply(on);
+        try { localStorage.setItem("fbGreyBg", on ? "1" : "0"); } catch (e) {}
+      });
+    })();
+
+    (function () {
+      var toggle = document.getElementById("expired-toggle");
+      var popup = document.getElementById("expired-popup");
+
+      function apply(on) {
+        if (toggle) toggle.setAttribute("aria-checked", on ? "true" : "false");
+        if (popup) popup.hidden = !on;
+      }
+
+      var on = false;
+      try { on = localStorage.getItem("fbExpired") === "1"; } catch (e) {}
+      apply(on);
+
+      if (toggle) {
+        toggle.addEventListener("click", function () {
+          var next = toggle.getAttribute("aria-checked") !== "true";
+          apply(next);
+          try { localStorage.setItem("fbExpired", next ? "1" : "0"); } catch (e) {}
+        });
+      }
+    })();
+
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var radios = document.querySelectorAll('input[name="reason"]');
+
+      var reason = params.get("reason");
+      if (reason !== null) {
+        var idx = parseInt(reason, 10);
+        if (!isNaN(idx) && radios[idx]) radios[idx].checked = true;
+      }
+
+      var note = params.get("note");
+      if (note) {
+        var textarea = document.querySelector(".rk-form textarea");
+        if (textarea) textarea.value = note;
+      }
+    })();
+
+    (function () {
+      var form = document.getElementById("rekla-form");
+      if (!form) return;
+      var textarea = form.querySelector("textarea");
+      var radios = form.querySelectorAll('input[name="reason"]');
+      var hintReason = form.querySelector(".hint-reason");
+      var hintText = form.querySelector(".hint-text");
+
+      var started = false;
+
+      function reasonChosen() {
+        var chosen = false;
+        radios.forEach(function (r) { if (r.checked) chosen = true; });
+        return chosen;
+      }
+      function showReason() {
+        if (hintReason) hintReason.hidden = false;
+        radios.forEach(function (r) { r.classList.add("field-error"); });
+      }
+      function clearReason() {
+        if (hintReason) hintReason.hidden = true;
+        radios.forEach(function (r) { r.classList.remove("field-error"); });
+      }
+      function showText() {
+        if (hintText) hintText.hidden = false;
+        if (textarea) textarea.classList.add("field-error");
+      }
+      function clearText() {
+        if (hintText) hintText.hidden = true;
+        if (textarea) textarea.classList.remove("field-error");
+      }
+
+      // Erst Grund prüfen, danach – wenn Grund gewählt – den Freitext.
+      function validate() {
+        if (!reasonChosen()) {
+          showReason();
+          clearText();
+          return false;
+        }
+        clearReason();
+        if (textarea && !textarea.value.trim()) {
+          showText();
+          return false;
+        }
+        clearText();
+        return true;
+      }
+
+      radios.forEach(function (r) {
+        r.addEventListener("change", function () { if (started) validate(); });
+      });
+      if (textarea) {
+        textarea.addEventListener("input", function () {
+          if (textarea.value.trim()) clearText();
+        });
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        started = true;
+        if (validate()) {
+          // Klick-Dummy: hier würde die Reklamation abgeschickt.
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
