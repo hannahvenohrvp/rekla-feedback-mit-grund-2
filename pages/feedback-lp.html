@@ -923,142 +923,28 @@
   </section>
   </div><!-- /#variant1 -->
 
-  <div id="variant2" class="variant-hidden">
-  <div id="rekla-popup">
-    <div class="rekla-popup-overlay"></div>
-    <div class="rekla-popup" role="dialog" aria-labelledby="rekla-popup-title">
-      <h2 id="rekla-popup-title">Feedback &amp; Reklamation nicht mehr möglich</h2>
-      <p>Die 7-tägige Frist für Feedback und Reklamationen ist leider bereits abgelaufen, sodass wir Ihr Anliegen nicht mehr entgegennehmen können. Wir bitten um Ihr Verständnis.</p>
-      <p>Bei Fragen oder zur Anpassung Ihrer Buchungseinstellungen wenden Sie sich gerne an Ihren Partnerbetreuer oder an <a href="mailto:partnerbetreuer@pflegehilfe.de">partnerbetreuer@pflegehilfe.de</a>.</p>
-    </div>
-  </div>
-
-  <div class="hero"></div>
-
-  <div class="content">
-    <h1>Anfrage reklamieren</h1>
-    <div class="request-id">Anfrage {{requestNumber}}</div>
-
-    <div class="content-main">
-      <div class="content-left">
-        <div class="warning-box">
-          <h2>Lead-Volumen gefährdet</h2>
-          <p>Wir verstehen, dass <b>nicht jeder Kontakt perfekt zu Ihrem Angebot passt</b> und Reklamationen Teil eines <b>transparenten Vermittlungsprozesses</b> sind.</p>
-          <p>Gleichzeitig möchten wir darauf hinweisen, dass eine <b>überdurchschnittlich hohe Reklamationsquote</b> Einfluss auf Ihr <b>zukünftiges Lead-Volumen</b> hat.</p>
-        </div>
-        <p class="phone">
-          Sie wollen Ihre Buchung optimieren & zukünftige Reklamationen vermeiden? Ihr persönlicher Partnerbetreuer hilft Ihnen gerne weiter:<br/>
-          <a href="tel:004961312652011">06131/26 52 011</a>
-        </p>
-
-        <div class="webinar">
-          <h2 class="webinar-title">Webinar: Qualität ist kein Zufall –<br/>Unsere Maßnahmen für Top Leads</h2>
-          <div class="webinar-body">
-            <img class="webinar-photo" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=240&q=80" alt="Rene Renkel"/>
-            <ul class="webinar-list">
-              <li>
-                <img src="https://static.pflegehilfe.org/newsletter/icons/icon-haken-22-19-1.png" alt=""/>
-                Wie entstehen unsere <b>hochwertigen Leads</b>
-              </li>
-              <li>
-                <img src="https://static.pflegehilfe.org/newsletter/icons/icon-haken-22-19-1.png" alt=""/>
-                Was tun wir für die <b>Qualitätssicherung</b>
-              </li>
-              <li>
-                <img src="https://static.pflegehilfe.org/newsletter/icons/icon-haken-22-19-1.png" alt=""/>
-                Einblicke in das <b>Reklamationsmanagement</b>
-              </li>
-            </ul>
-          </div>
-          <a class="webinar-btn" href="#">Jetzt kostenlos anmelden</a>
-          <p class="webinar-date">Nächster Termin: 18.06.2026</p>
-        </div>
-      </div>
-
-      <aside class="form-box">
-      <h2>Bitte wählen Sie den Reklamationsgrund</h2>
-      <label class="option"><input type="radio" name="reason-v2"/> Kontakt bereits bekannt</label>
-      <label class="option"><input type="radio" name="reason-v2"/> Kein Kontakt möglich</label>
-      <label class="option"><input type="radio" name="reason-v2"/> Budget/Finanzierung falsch</label>
-      <label class="option"><input type="radio" name="reason-v2"/> Zielgebiet falsch</label>
-      <label class="option"><input type="radio" name="reason-v2"/> Produktklassifizierung falsch</label>
-      <label class="option"><input type="radio" name="reason-v2"/> Keine Beachtung der hinterlegten Kriterien (bitte in Textfeld erläutern)</label>
-      <textarea placeholder="Hier haben Sie die Möglichkeit Ihren Reklamationsgrund weiter auszuführen."></textarea>
-      <button class="submit" type="button">Anfrage reklamieren</button>
-      </aside>
-    </div>
-  </div>
-
-  <section class="details">
-    <h2>Details der Anfrage {{requestNumber}}</h2>
-    <div class="details-grid">
-      <div>
-        <div class="details-block">
-          <h3>Kontaktinformationen des Interessenten</h3>
-          <dl>
-            <div class="detail-row"><dt>Anrede:</dt><dd>{{inquiryDetails.contact.salutation}}</dd></div>
-            <div class="detail-row"><dt>Vorname:</dt><dd>{{inquiryDetails.contact.firstName}}</dd></div>
-            <div class="detail-row"><dt>Nachname:</dt><dd>{{inquiryDetails.contact.lastName}}</dd></div>
-            <div class="detail-row"><dt>Email:</dt><dd>{{inquiryDetails.contact.email}}</dd></div>
-            <div class="detail-row"><dt>Mobil:</dt><dd>{{inquiryDetails.contact.mobile}}</dd></div>
-            <div class="detail-row"><dt>Erreichbarkeit:</dt><dd>{{inquiryDetails.contact.availability}}</dd></div>
-          </dl>
-        </div>
-
-        <div class="details-block" style="margin-top:32px;">
-          <h3>Informationen zu den Senioren</h3>
-          {{#each inquiryDetails.seniors}}
-          <div class="senior-block">
-            <h4>Senior: {{title}}</h4>
-            <dl>
-              <div class="detail-row"><dt>Anrede:</dt><dd>{{salutation}}</dd></div>
-              <div class="detail-row"><dt>Beziehung:</dt><dd>{{relationship}}</dd></div>
-              <div class="detail-row"><dt>Lebenssituation:</dt><dd>{{livingSituation}}</dd></div>
-              <div class="detail-row"><dt>Pflegegrad:</dt><dd>{{careLevel}}</dd></div>
-              <div class="detail-row"><dt>Mobilität:</dt><dd>{{mobility}}</dd></div>
-              <div class="detail-row"><dt>Medizinischer Hintergrund:</dt><dd>{{medicalBackground}}</dd></div>
-            </dl>
-          </div>
-          {{/each}}
-        </div>
-      </div>
-
-      <div class="details-block">
-        <h3>Anfragendetails - {{inquiryDetails.request.productName}}</h3>
-        <dl>
-          {{#each inquiryDetails.request.fields}}
-          <div class="detail-row"><dt>{{label}}:</dt><dd>{{value}}</dd></div>
-          {{/each}}
-          <div class="detail-row"><dt>Beratungsgespräch durchgeführt:</dt><dd>{{inquiryDetails.request.consultant}}</dd></div>
-          <div class="detail-row"><dt>Anfrage eingegangen:</dt><dd>{{inquiryDetails.request.receivedAt}}</dd></div>
-          <div class="detail-row"><dt>Beratungsgespräch durchgeführt:</dt><dd>{{inquiryDetails.request.consultedAt}}</dd></div>
-        </dl>
-      </div>
-    </div>
-  </section>
-  </div><!-- /#variant2 -->
 
   <script>
     (function () {
+      // "NEU" = Modus "7-Tage-Frist abgelaufen". Setzt nur das Flag; das Popup
+      // erscheint auf der Seite "Anfrage reklamieren" (/lp/feedback-reklamation).
       var toggle = document.getElementById("variant-toggle");
-      var v1 = document.getElementById("variant1");
-      var v2 = document.getElementById("variant2");
-      var popup = document.getElementById("rekla-popup");
-      if (!toggle || !v1 || !v2) return;
+      if (!toggle) return;
 
-      function apply(showV2) {
-        toggle.setAttribute("aria-checked", showV2 ? "true" : "false");
-        v1.classList.toggle("variant-hidden", showV2);
-        v2.classList.toggle("variant-hidden", !showV2);
-        if (showV2 && popup) popup.classList.remove("variant-hidden");
+      function apply(on) {
+        toggle.setAttribute("aria-checked", on ? "true" : "false");
       }
 
-      try { if (localStorage.getItem("fbExpired") === "1") apply(true); } catch (e) {}
+      try { apply(localStorage.getItem("fbExpired") === "1"); } catch (e) {}
 
       toggle.addEventListener("click", function () {
-        var showV2 = toggle.getAttribute("aria-checked") !== "true";
-        apply(showV2);
-        try { localStorage.setItem("fbExpired", showV2 ? "1" : "0"); } catch (e) {}
+        var on = toggle.getAttribute("aria-checked") !== "true";
+        apply(on);
+        try { localStorage.setItem("fbExpired", on ? "1" : "0"); } catch (e) {}
+        if (on) {
+          // Popup vor der abgedunkelten Seite "Anfrage reklamieren" anzeigen
+          window.location.href = "/lp/feedback-reklamation";
+        }
       });
     })();
 
