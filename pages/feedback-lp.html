@@ -105,16 +105,26 @@
       margin: 0 auto;
       padding: 40px 24px 44px;
     }
+    .fb-top {
+      border-top: 5px solid #98c44c;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      align-items: start;
+      padding: 34px 40px;
+      margin-bottom: 26px;
+    }
+    .fb-thanks {
+      padding-right: 40px;
+    }
+    .fb-webinar {
+      padding-left: 40px;
+      border-left: 1px solid #e6e8ec;
+    }
     .fb-card {
       background: #f8fafc;
       border: 1px solid #e6e9ee;
       border-radius: 14px;
       box-shadow: none;
-    }
-    .fb-thanks {
-      border-top: 5px solid #98c44c;
-      padding: 34px 40px;
-      margin-bottom: 26px;
     }
     .fb-thanks h2 {
       margin: 0 0 14px;
@@ -171,6 +181,11 @@
     .wb-list li:last-child {
       margin-bottom: 0;
     }
+    .fb-checks li span {
+      flex: 1;
+      text-align: justify;
+      hyphens: auto;
+    }
     .tick {
       flex-shrink: 0;
       width: 18px;
@@ -199,6 +214,10 @@
       color: #48453b;
     }
     .fb-webinar h3 {
+      margin: 0 0 12px;
+      font-size: 18px;
+      line-height: 1.35;
+      font-weight: bold;
       color: #7fa62f;
     }
     .fb-badge {
@@ -402,15 +421,25 @@
       border-color: #417a91;
     }
     @media (max-width: 860px) {
-      .fb-cols {
+      .fb-top {
         grid-template-columns: 1fr;
+      }
+      .fb-thanks {
+        padding-right: 0;
+        padding-bottom: 24px;
+      }
+      .fb-webinar {
+        padding-left: 0;
+        padding-top: 24px;
+        border-left: none;
+        border-top: 1px solid #e6e8ec;
       }
     }
     @media (max-width: 600px) {
       .fb-wrap {
         padding: 28px 16px 24px;
       }
-      .fb-thanks {
+      .fb-top {
         padding: 26px 22px;
       }
       .fb-col {
@@ -720,7 +749,7 @@
       border: 1px solid #e3e7ec;
       box-shadow: 0 10px 34px rgba(0, 0, 0, 0.08);
     }
-    #variant1.bg-grey .fb-thanks {
+    #variant1.bg-grey .fb-top {
       border-top: 5px solid #98c44c;
     }
     .rekla-greybox {
@@ -830,7 +859,8 @@
 
   <div id="variant1">
   <section class="fb-wrap">
-    <div class="fb-card fb-thanks">
+    <div class="fb-card fb-top">
+      <div class="fb-thanks">
       <h2>Vielen Dank für Ihr Feedback!</h2>
       <p class="lead">Ihr Feedback ist bei uns angekommen und hilft uns dabei, die <b>Qualität unserer Beratung</b> gezielt zu verbessern und <b>passende Anfragen für Sie</b> sicherzustellen.</p>
       <hr class="fb-divider"/>
@@ -842,7 +872,7 @@
         </li>
         <li>
           <svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span>Es werden <b>Schulungs- und Coachingmaßnahmen</b> eingeleitet.</span>
+          <span>Für den Berater werden <b>Schulungs- und Coachingmaßnahmen</b> eingeleitet.</span>
         </li>
         <li>
           <svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -853,42 +883,9 @@
           <span>Die Erkenntnisse helfen uns, die <b>Qualität zukünftiger Anfragen</b> weiter zu verbessern.</span>
         </li>
       </ul>
-    </div>
-
-    <div class="fb-cols">
-      <div class="fb-card fb-col fb-reason">
-        <h3>Was war ausschlaggebend für Ihre Bewertung? <span class="fb-badge">OPTIONAL</span></h3>
-        <p class="fb-muted">Gerne können Sie uns kurz mitteilen, warum Sie dieses Feedback gegeben haben. So können wir besser nachvollziehen, warum die Anfrage nicht Ihren Erwartungen entsprochen hat.</p>
-
-        <button id="reason-toggle" class="reason-toggle" type="button" aria-expanded="false" aria-controls="reason-panel">
-          <svg class="chev" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Grund angeben
-        </button>
-
-        <div id="reason-panel" class="reason-panel">
-          <label class="reason-option"><input type="radio" name="reason"/> Kontakt bereits bekannt</label>
-          <label class="reason-option"><input type="radio" name="reason"/> Kein Kontakt möglich</label>
-          <label class="reason-option"><input type="radio" name="reason"/> Budget/Finanzierung falsch</label>
-          <label class="reason-option"><input type="radio" name="reason"/> Zielgebiet falsch</label>
-          <label class="reason-option"><input type="radio" name="reason"/> Produktklassifizierung falsch</label>
-          <label class="reason-option"><input type="radio" name="reason"/> Keine Beachtung der hinterlegten Kriterien (bitte in Textfeld erläutern)</label>
-          <textarea placeholder="Möchten Sie uns noch etwas mitteilen? (optional)"></textarea>
-          <button class="btn-save" type="button">Feedback speichern</button>
-        </div>
-
-        <p id="reason-saved" class="reason-saved" hidden>
-          <svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Vielen Dank, Feedbackgrund wurde gespeichert!
-        </p>
-
-        <hr class="fb-sep"/>
-
-        <h4>Erstattung des Leadpreises prüfen</h4>
-        <p class="body">Entspricht die Anfrage nicht den vereinbarten Qualitätsstandards, können Sie zusätzlich eine Reklamation einreichen. Unser Qualitätsteam prüft Ihren Fall und informiert Sie über das Ergebnis sowie eine mögliche <b>Erstattung des Leadpreises</b>.</p>
-        <a class="btn-reklamieren" href="/lp/feedback-reklamation">Anfrage reklamieren <span class="arrow">&rarr;</span></a>
       </div>
 
-      <div class="fb-card fb-col fb-webinar">
+      <div class="fb-webinar">
         <h3>Kostenloses Webinar: Qualität ist kein Zufall – Unsere Maßnahmen für Top Leads</h3>
         <p class="wb-date">
           <svg class="cal" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 9.5h17M8 3.5v3M16 3.5v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
@@ -920,6 +917,38 @@
         <a class="btn-webinar" href="#">Jetzt kostenlos anmelden</a>
       </div>
     </div>
+
+      <div class="fb-card fb-col fb-reason">
+        <h3>Was war ausschlaggebend für Ihre Bewertung? <span class="fb-badge">OPTIONAL</span></h3>
+        <p class="fb-muted">Gerne können Sie uns kurz mitteilen, warum Sie dieses Feedback gegeben haben. So können wir besser nachvollziehen, warum die Anfrage nicht Ihren Erwartungen entsprochen hat.</p>
+
+        <button id="reason-toggle" class="reason-toggle" type="button" aria-expanded="false" aria-controls="reason-panel">
+          <svg class="chev" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Grund angeben
+        </button>
+
+        <div id="reason-panel" class="reason-panel">
+          <label class="reason-option"><input type="radio" name="reason"/> Kontakt bereits bekannt</label>
+          <label class="reason-option"><input type="radio" name="reason"/> Kein Kontakt möglich</label>
+          <label class="reason-option"><input type="radio" name="reason"/> Budget/Finanzierung falsch</label>
+          <label class="reason-option"><input type="radio" name="reason"/> Zielgebiet falsch</label>
+          <label class="reason-option"><input type="radio" name="reason"/> Produktklassifizierung falsch</label>
+          <label class="reason-option"><input type="radio" name="reason"/> Keine Beachtung der hinterlegten Kriterien (bitte in Textfeld erläutern)</label>
+          <textarea placeholder="Möchten Sie uns noch etwas mitteilen? (optional)"></textarea>
+          <button class="btn-save" type="button">Feedback speichern</button>
+        </div>
+
+        <p id="reason-saved" class="reason-saved" hidden>
+          <svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Vielen Dank, Feedbackgrund wurde gespeichert!
+        </p>
+
+        <hr class="fb-sep"/>
+
+        <h4>Erstattung des Leadpreises prüfen</h4>
+        <p class="body">Entspricht die Anfrage nicht den vereinbarten Qualitätsstandards, können Sie zusätzlich eine Reklamation einreichen. Unser Qualitätsteam prüft Ihren Fall und informiert Sie über das Ergebnis sowie eine mögliche <b>Erstattung des Leadpreises</b>.</p>
+        <a class="btn-reklamieren" href="/lp/feedback-reklamation">Anfrage reklamieren <span class="arrow">&rarr;</span></a>
+      </div>
   </section>
   </div><!-- /#variant1 -->
 

@@ -129,12 +129,18 @@
       font-size: 18px;
       color: #8b8b83;
     }
-    .rk-cols {
+    .rk-top {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 26px;
+      grid-template-columns: 1.3fr 1fr;
       align-items: start;
       margin-bottom: 26px;
+    }
+    .rk-warning {
+      padding-right: 30px;
+    }
+    .rk-phone-col {
+      padding-left: 30px;
+      border-left: 1px solid #e6e9ee;
     }
     .rk-card {
       background: #f8fafc;
@@ -143,8 +149,8 @@
       box-shadow: none;
       padding: 26px 30px 28px;
     }
-    .rk-warning {
-      border-left: 5px solid #c0392b;
+    .rk-form {
+      margin-bottom: 26px;
     }
     .rk-warning h2 {
       margin: 0 0 14px;
@@ -161,7 +167,7 @@
     }
     .rk-warning p:last-child { margin-bottom: 0; }
     .rk-phone {
-      margin: 20px 4px 0;
+      margin: 0;
       font-size: 14px;
       line-height: 1.6;
       color: #48453b;
@@ -170,6 +176,42 @@
       color: #4c8ba5;
       text-decoration: none;
       font-weight: bold;
+    }
+    .rk-contact {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .rk-contact-info {
+      flex: 1;
+    }
+    .rk-contact-label {
+      margin: 0 0 2px;
+      font-size: 12px;
+      color: #8b8b83;
+    }
+    .rk-contact-name {
+      margin: 0 0 3px;
+      font-size: 15px;
+      font-weight: bold;
+      color: #48453b;
+    }
+    .rk-contact-phone {
+      margin: 0;
+      font-size: 14px;
+    }
+    .rk-contact-phone a {
+      color: #4c8ba5;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .rk-contact-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
     }
     .rk-form h2 {
       margin: 0 0 18px;
@@ -278,8 +320,8 @@
       .field-hint::after { display: none; }
     }
     .rk-submit {
-      width: 100%;
-      padding: 14px 16px;
+      display: inline-block;
+      padding: 11px 26px;
       font-size: 14px;
       font-weight: bold;
       color: #fff;
@@ -374,9 +416,6 @@
       border: 1px solid #e3e7ec;
       box-shadow: 0 8px 26px rgba(0, 0, 0, 0.06);
     }
-    body.bg-grey .rk-warning {
-      border-left: 5px solid #c0392b;
-    }
     .variant-badge.neu {
       color: #c0392b;
     }
@@ -418,7 +457,14 @@
     .rekla-popup p:last-child { margin-bottom: 0; }
     .rekla-popup a { color: #4c8ba5; }
     @media (max-width: 860px) {
-      .rk-cols { grid-template-columns: 1fr; }
+      .rk-top { grid-template-columns: 1fr; }
+      .rk-warning { padding-right: 0; padding-bottom: 22px; }
+      .rk-phone-col {
+        padding-left: 0;
+        padding-top: 22px;
+        border-left: none;
+        border-top: 1px solid #e6e9ee;
+      }
       .rk-details-grid { grid-template-columns: 1fr; gap: 28px; }
     }
     @media (max-width: 600px) {
@@ -487,21 +533,29 @@
     <h1 class="rk-title">Anfrage reklamieren</h1>
     <p class="rk-sub">Anfrage {{requestNumber}}</p>
 
-    <div class="rk-cols">
-      <div class="rk-left">
-        <div class="rk-card rk-warning">
-          <h2>Lead-Volumen gefährdet</h2>
-          <p>Wir verstehen, dass <b>nicht jeder Kontakt perfekt zu Ihrem Angebot passt</b> und Reklamationen Teil eines <b>transparenten Vermittlungsprozesses</b> sind.</p>
-          <p>Gleichzeitig möchten wir darauf hinweisen, dass eine <b>überdurchschnittlich hohe Reklamationsquote</b> Einfluss auf Ihr <b>zukünftiges Lead-Volumen</b> hat.</p>
-        </div>
-        <p class="rk-phone">
-          Sie wollen Ihre Buchung optimieren &amp; zukünftige Reklamationen vermeiden? Ihr persönlicher Partnerbetreuer hilft Ihnen gerne weiter:<br/>
-          <a href="tel:004961312652011">06131/26 52 011</a>
-        </p>
+    <div class="rk-card rk-top">
+      <div class="rk-warning">
+        <h2>Eine Reklamation hat Einfluss auf Ihr Leadvolumen</h2>
+        <p>Wir verstehen, dass <b>nicht jeder Kontakt perfekt zu Ihrem Angebot passt</b> und Reklamationen Teil eines <b>transparenten Vermittlungsprozesses</b> sind.</p>
+        <p>Gleichzeitig möchten wir darauf hinweisen, dass eine <b>überdurchschnittlich hohe Reklamationsquote</b> Einfluss auf Ihr <b>zukünftiges Lead-Volumen</b> hat.</p>
       </div>
+      <div class="rk-phone-col">
+        <p class="rk-phone">
+          Sie wollen Ihre Buchung optimieren &amp; zukünftige Reklamationen vermeiden? Ihr persönlicher Partnerbetreuer hilft Ihnen gerne weiter:
+        </p>
+        <div class="rk-contact">
+          <img class="rk-contact-avatar" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=120&q=80" alt="Kevin Mir Amidi Namini"/>
+          <div class="rk-contact-info">
+            <p class="rk-contact-label">Ihr/e Ansprechpartner/in</p>
+            <p class="rk-contact-name">Kevin Mir Amidi Namini</p>
+            <p class="rk-contact-phone"><a href="tel:004961312652011">06131 / 26 52 011</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-      <div class="rk-card rk-form">
-        <h2>Bitte wählen Sie den Reklamationsgrund</h2>
+    <div class="rk-card rk-form">
+      <h2>Bitte wählen Sie den Reklamationsgrund</h2>
         <form id="rekla-form" novalidate>
           <div class="reason-options">
             <div class="field-hint hint-reason" role="alert" hidden>Wählen Sie bitte hier den Grund Ihrer Reklamation aus.</div>
@@ -519,7 +573,6 @@
           <button class="rk-submit" type="submit">Anfrage reklamieren</button>
         </form>
       </div>
-    </div>
 
     <div class="rk-card rk-details">
       <h2>Details der Anfrage {{requestNumber}}</h2>
