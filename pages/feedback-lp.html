@@ -107,11 +107,13 @@
     }
     .fb-top {
       border-top: 5px solid #98c44c;
+      padding: 34px 40px;
+      margin-bottom: 26px;
+    }
+    .fb-top-row {
       display: grid;
       grid-template-columns: 1.9fr 1fr;
       align-items: start;
-      padding: 34px 40px;
-      margin-bottom: 26px;
     }
     .fb-thanks {
       padding-right: 40px;
@@ -210,7 +212,8 @@
     .fb-col {
       padding: 28px 30px 30px;
     }
-    .fb-col h3 {
+    .fb-col h3,
+    .fb-reason-q h3 {
       display: flex;
       align-items: center;
       flex-wrap: wrap;
@@ -433,7 +436,7 @@
       border-color: #417a91;
     }
     @media (max-width: 860px) {
-      .fb-top {
+      .fb-top-row {
         grid-template-columns: 1fr;
       }
       .fb-checks li span {
@@ -875,6 +878,7 @@
   <div id="variant1">
   <section class="fb-wrap">
     <div class="fb-card fb-top">
+      <div class="fb-top-row">
       <div class="fb-thanks">
       <h2>Vielen Dank für Ihr Feedback!</h2>
       <p class="lead">Ihr Feedback ist bei uns angekommen und hilft uns dabei, die <b>Qualität unserer Beratung</b> gezielt zu verbessern und <b>passende Anfragen für Sie</b> sicherzustellen.</p>
@@ -931,10 +935,12 @@
         </div>
         <a class="btn-webinar" href="#">Jetzt kostenlos anmelden</a>
       </div>
-    </div>
+      </div>
 
-      <div class="fb-card fb-col fb-reason">
-        <h3>Was war ausschlaggebend für Ihre Bewertung? <span class="fb-badge">OPTIONAL</span></h3>
+      <hr class="fb-sep"/>
+
+      <div class="fb-reason-q">
+        <h3>Was war ausschlaggebend für Ihre Bewertung?</h3>
         <p class="fb-muted">Gerne können Sie uns kurz mitteilen, warum Sie dieses Feedback gegeben haben. So können wir besser nachvollziehen, warum die Anfrage nicht Ihren Erwartungen entsprochen hat.</p>
 
         <button id="reason-toggle" class="reason-toggle" type="button" aria-expanded="false" aria-controls="reason-panel">
@@ -957,9 +963,10 @@
           <svg class="tick" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Vielen Dank, Feedbackgrund wurde gespeichert!
         </p>
+      </div>
+    </div>
 
-        <hr class="fb-sep"/>
-
+      <div class="fb-card fb-col fb-reason">
         <h4>Erstattung des Leadpreises prüfen</h4>
         <p class="body">Entspricht die Anfrage nicht den vereinbarten Qualitätsstandards, können Sie zusätzlich eine Reklamation einreichen. Unser Qualitätsteam prüft Ihren Fall und informiert Sie über das Ergebnis sowie eine mögliche <b>Erstattung des Leadpreises</b>.</p>
         <a class="btn-reklamieren" href="/lp/feedback-reklamation">Anfrage reklamieren <span class="arrow">&rarr;</span></a>
